@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+nav.scrolled {
+  background-color: #0077cc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-links li a:hover {
+  background-color: white;
+  color: #0077cc;
+  border-radius: 4px;
+}
+header, section {
+  padding: 100px 20px;
+  text-align: center;
+}
+header {
+  height: 100vh;
+  background: linear-gradient(to right, #0066cc, #33ccff);
+  color: white;
+}
+section {
+  background-color: #f4f4f4;
+}
+footer {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #0077cc;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    display: none;
+    width: 200px;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+}
